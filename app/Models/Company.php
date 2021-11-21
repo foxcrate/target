@@ -10,6 +10,11 @@ class Company extends Model
     use HasFactory;
 
     protected $table="companies";
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
     protected $fillable = [
         'title',
         'slug',
