@@ -17,9 +17,24 @@ class CompaniesImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Company([
-           'title'     => $row['title'],
-           'phone_number'    => $row['phone_number'],
+           'title' => $row['title'],
+           'city' => $row['city'],
+           'address' => $row['address'],
+           'contact_person' => $row['contact_person'],
+           'phone_number' => $row['phone_number'],
            'email' => $row['email'],
+           'website' => $row['website'],
+           'description' => $row['description'],
+           'category_id' => $row['category_id'],
+           'whatsapp_number' => $row['whatsapp_number'],
+           'ceo_number' => $row['ceo_number'],
+           'purchasing_manager_number' => $row['purchasing_manager_number'],
+           'sales_manager_number' => $row['sales_manager_number'],
+           'ceo_name' => $row['ceo_name'],
+           'sales_manager_name' => $row['sales_manager_name'],
+           'purchases_manager_name' => $row['purchases_manager_name'],
+        //    'marketing_manager_name' => $row['marketing_manager_name'],
+           'area' => $row['area'],
         ]);
     }
 }

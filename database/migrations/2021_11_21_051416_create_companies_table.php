@@ -18,10 +18,10 @@ class CreateCompaniesTable extends Migration
 
             $table->text('title')->nullable();
             $table->text('slug')->nullable();
-            $table->text('gc_country')->nullable();
-            $table->text('gc_state')->nullable();
-            $table->text('gc_city')->nullable();
-            $table->text('gc_locality')->nullable();
+            $table->text('country')->nullable();
+            $table->text('state')->nullable();
+            $table->text('city')->nullable();
+            $table->text('locality')->nullable();
             $table->text('postcode')->nullable();
             $table->text('address')->nullable();
             $table->decimal('latitude',11,8)->nullable();

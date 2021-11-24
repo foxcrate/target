@@ -11,13 +11,17 @@
             <div class="meet-card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="img/company.jpg" class="img-fluid rounded-start cat-img" alt="...">
+                        @if ($company->image_1 == null)
+                        <img src="images/company.jpg" class="img-fluid rounded-start cat-img" alt="...">
+                        @else
+                        <img src='{{ asset($company->image_1) }}' class="img-fluid rounded-start cat-img" alt="...">
+                        @endif
                     </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{{$company->title}}</h5>
                                 <p class="card-text">{{$company->description}}</p>
-                                <a class="btn btn-outline-dark" href="{{route( 'company_profile',[ 'company_id' => $company->id ] )}}" target="_blank">زيارة الشركة</a>
+                                <a class="btn btn-outline-dark" href="{{route( 'company_profile',[ 'company_id' => $company->id ] )}}" >زيارة الشركة</a>
                                 <a href="https://wa.me/{{$company->whatsapp_number}}" target="_blank" class="btn btn-success">واتساب</a>
                                 <a class="card-phone btn btn-outline-primary " href="tel:{{ $company->phone_number }}" >Call: {{ $company->phone_number }}</a>
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i class="far fa-envelope"></i> إرسال بريد الكتروني</button>

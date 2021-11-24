@@ -18,8 +18,10 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'package_id',
         'name',
         'email',
+        'job',
         'password',
     ];
 
@@ -45,6 +47,26 @@ class User extends Authenticatable
 
     public function company(){
         return $this->hasOne(Company::class);
+    }
+
+    public function package(){
+        return $this->hasOne(Package::class);
+    }
+
+    public function sent_messages(){
+        return $this->hasMany( 'App\Models\Message', 'sender_user_id');
+    }
+
+    public function received_messages(){
+        return $this->hasMany( 'App\Models\Message', 'receiver_user_id');
+    }
+
+    public function all_messages(){
+
+        $all_messages = Message::where('sender_user_id',$this->id)->orWhere('receiver_user_id',$this->id)->get();
+        return $all_messages;
+
+        return $this->hasMany( 'App\Models\Message', 'receiver_user_id');
     }
 
 }

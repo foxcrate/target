@@ -175,6 +175,7 @@
     <h2 class="block-title">تبحث عن قطاع محدد؟</h2>
     <p class="block-title">ابحث حسب قطاعك المستهدف (عقارات، استيراد وتصدير،..)</p>
     <div class="row">
+        @foreach( $categories as $category )
         <div class="col-md-6">
             <div class="cat-card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
@@ -183,64 +184,17 @@
                     </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
+                                <h5 class="card-title">{{$category->name}}</h5>
+                                <p class="card-text">{{$category->description}}</p>
+                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">{{count($category->companies)}}</span> شركة</small></p>
                             </div>
                         </div>
                     </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="cat-card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                    <img class="cat-img img-fluid rounded-start" src="images/cat-img1.jpg"  alt="Category-img">
-                    </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="cat-card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                    <img class="cat-img img-fluid rounded-start" src="images/cat-img1.jpg"  alt="Category-img">
-                    </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="cat-card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                    <img class="cat-img img-fluid rounded-start" src="images/cat-img1.jpg"  alt="Category-img">
-                    </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
+        @endforeach
         <div class="col-md-12 text-center pt-4 pb-3">
-            <a class="btn btn-dark " href="category.php">جميع القطاعات</a>
+            <a class="btn btn-dark " href="{{route('category_index')}}">جميع القطاعات</a>
         </div>
     </div>
 </div>
@@ -252,7 +206,12 @@
     @foreach ( $companies as $company )
         <div class="col-md-3 company-ro">
             <div class="company-card" style="width: 18rem;">
+                    @if ($company->image_1 == null)
                     <img src="images/company.jpg" class="card-img-top" alt="...">
+                    @else
+                    <img src='{{ asset($company->image_1) }}' class="card-img-top" alt="...">
+                    @endif
+
                     <div class="card-body">
                         <h5 class="view-span">{{ $company->title }}</h5>
                         <p class="card-text">{{ $company->description }}</p>

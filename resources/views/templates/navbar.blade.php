@@ -40,7 +40,7 @@
           <a class="nav-link" href="#">عن الشركة</a>
         </li>
         <li class="nav-item sameh">
-          <a class="nav-link" href="#"> خطط الأسعار</a>
+          <a class="nav-link" href="{{ route('all_packages') }}"> خطط الأسعار</a>
         </li>
         <li class="nav-item sameh">
           <a class="nav-link" href="#">  إتصل بنا</a>

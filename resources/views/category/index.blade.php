@@ -10,102 +10,24 @@
 </div>
 <div class="container">
     <div class="row">
+        @foreach( $all_categories as $category )
         <div class="col-md-6 category-table">
             <div class="cat-card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img class="cat-img img-fluid rounded-start" src="img/cat-img1.jpg"  alt="Category-img">
+                        <img class="cat-img img-fluid rounded-start" src="{{asset($category->image)}}"  alt="Category-img">
                     </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
+                                <h5 class="card-title">{{$category->name}}</h5>
+                                <p class="card-text">{{$category->description}}</p>
+                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">{{ count($category->companies) }}</span> شركة</small></p>
                             </div>
                         </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 category-table">
-            <div class="cat-card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img class="cat-img img-fluid rounded-start" src="img/cat-img1.jpg"  alt="Category-img">
-                    </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 category-table">
-            <div class="cat-card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img class="cat-img img-fluid rounded-start" src="img/cat-img1.jpg"  alt="Category-img">
-                    </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 category-table">
-            <div class="cat-card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img class="cat-img img-fluid rounded-start" src="img/cat-img1.jpg"  alt="Category-img">
-                    </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 category-table">
-            <div class="cat-card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img class="cat-img img-fluid rounded-start" src="img/cat-img1.jpg"  alt="Category-img">
-                    </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 category-table">
-            <div class="cat-card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img class="cat-img img-fluid rounded-start" src="img/cat-img1.jpg"  alt="Category-img">
-                    </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">إسم القسم</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="cat-number">يحتوي <span class="cat-span">3325</span> شركة</small></p>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 

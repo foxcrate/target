@@ -59,7 +59,8 @@
                         </div>
 
                         <a class="small login-text" href="#!">نسيت كلمة المرور ؟</a>
-                        <p class="mb-5 pb-lg-2 login-text" >Don't have an account? <a class=" login-text" href="{{route('register')}}">Register here</a></p>
+                        {{-- <p class="mb-5 pb-lg-2 login-text" >Don't have an account? <a class=" login-text" href="{{route('register')}}">Register here</a></p> --}}
+                        <p><a href="{{route('register')}}" class="mb-5 pb-lg-2 login-text" >Don't have an account? Register here</a></p>
                         <a href="#!" class="small login-text">Terms of use.</a>
                         <a href="#!" class="small login-text">Privacy policy</a>
                     </form>

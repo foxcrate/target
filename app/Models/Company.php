@@ -16,12 +16,16 @@ class Company extends Model
     }
 
     protected $fillable = [
+        'user_id',
+        'rate',
+        'number_of_ratings',
+        'category_id',
         'title',
         'slug',
-        'gc_country',
-        'gc_state',
-        'gc_city',
-        'gc_locality',
+        'country',
+        'state',
+        'city',
+        'locality',
         'postcode',
         'address',
         'latitude',
@@ -127,5 +131,13 @@ class Company extends Model
         'since',
         'since_guest',
     ];
+
+    public function category(){
+        return $this->belongsTo('App\Models\Category');
+    }
+
+    public function pdfs(){
+        return $this->hasMany( 'App\Models\Pdf');
+    }
 
 }

@@ -58,9 +58,9 @@ class LoginController extends Controller
             $the_user = User::where( 'email', $request->email ) -> first();
 
             if($the_user->type == 'admin'){
-                return redirect()->intended('admin.dashboard');
+                return redirect()->intended('admin/dashboard');
             }else{
-                return redirect()->intended('user/');
+                return redirect()->intended('/user/dashboard');
             }
         }
         //return "Error";

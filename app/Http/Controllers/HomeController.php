@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -35,8 +36,9 @@ class HomeController extends Controller
         //$companies = Company::all();
         //where('id','>',0)->
         $companies = Company::inRandomOrder()->limit(4)->get();
+        $categories = Category::inRandomOrder()->limit(4)->get();
 
-        return view('index')->with(['companies'=>$companies]);
+        return view('index')->with(['companies'=>$companies , 'categories'=>$categories]);
     }
 
 }
