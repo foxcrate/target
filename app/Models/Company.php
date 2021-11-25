@@ -140,4 +140,12 @@ class Company extends Model
         return $this->hasMany( 'App\Models\Pdf');
     }
 
+    public function images(){
+        return $this->hasMany( 'App\Models\Image');
+    }
+
+    public function videos(){
+        return $this->hasMany( 'App\Models\Video');
+    }
+
 }

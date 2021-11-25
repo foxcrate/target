@@ -263,14 +263,101 @@
               <div class="tab-pane" id="event" role="tabpanel">
                 <p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>
               </div>
-              <div class="tab-pane" id="fils" role="tabpanel">
-                <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
+              <div class="tab-pane" id="files" role="tabpanel">
+                  <div class="row">
+                      @foreach( $company->pdfs as $pdf )
+                      <div class="col-md-2 text-center com-icon">
+                          <a class="c-icon" href="http://localhost:8000/{{$pdf->file}}" target="_blank" ><i class="fas fa-file-pdf"></i><p>{{$pdf->title}}</p></a>
+                      </div>
+                      @endforeach
+                  </div>
               </div>
               <div class="tab-pane" id="brun" role="tabpanel">
-                <p>
-                  "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-                </p>
-            </div>
+                  {{-- Start Brun --}}
+                  <div class="row">
+                      <div class="col-md-3 company-ro">
+                          <div class="company-card" style="width: 18rem;">
+                                  <img src="img/company.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                      <h5 class="view-span">إسم الفرع</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  </div>
+                                      <div class="row card-icon">
+                                          <div class="view-all col-md-6"><i class="fas fa-eye"></i> <span class="view-span">225</span></div>
+                                          <div class="card-adress col-md-6"><i class="fas fa-map-marker-alt"></i><span class="adress-span"> 46 شارع العزب فرج- حدائق حلوان</span> </div>
+                                          <div class="card-clicktocall col-md-12">
+                                          <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:01022630272" >Call :  01022630272</a>
+                                          </div>
+                                      </div>
+                                      <div class="card-button">
+                                          <a href="https://wa.me/201022630272" target="_blank" class="btn btn-success">واتساب</a>
+                                          <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
+                                      </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3 company-ro">
+                          <div class="company-card" style="width: 18rem;">
+                                  <img src="img/company.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                      <h5 class="view-span">إسم الفرع</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  </div>
+                                      <div class="row card-icon">
+                                          <div class="view-all col-md-6"><i class="fas fa-eye"></i> <span class="view-span">225</span></div>
+                                          <div class="card-adress col-md-6"><i class="fas fa-map-marker-alt"></i><span class="adress-span"> 46 شارع العزب فرج- حدائق حلوان</span> </div>
+                                          <div class="card-clicktocall col-md-12">
+                                          <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:01022630272" >Call :  01022630272</a>
+                                          </div>
+                                      </div>
+                                      <div class="card-button">
+                                          <a href="https://wa.me/201022630272" target="_blank" class="btn btn-success">واتساب</a>
+                                          <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
+                                      </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3 company-ro">
+                          <div class="company-card" style="width: 18rem;">
+                                  <img src="img/company.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                      <h5 class="view-span">إسم الفرع</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  </div>
+                                      <div class="row card-icon">
+                                          <div class="view-all col-md-6"><i class="fas fa-eye"></i> <span class="view-span">225</span></div>
+                                          <div class="card-adress col-md-6"><i class="fas fa-map-marker-alt"></i><span class="adress-span"> 46 شارع العزب فرج- حدائق حلوان</span> </div>
+                                          <div class="card-clicktocall col-md-12">
+                                          <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:01022630272" >Call :  01022630272</a>
+                                          </div>
+                                      </div>
+                                      <div class="card-button">
+                                          <a href="https://wa.me/201022630272" target="_blank" class="btn btn-success">واتساب</a>
+                                          <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
+                                      </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3 company-ro">
+                          <div class="company-card" style="width: 18rem;">
+                                  <img src="img/company.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                      <h5 class="view-span">إسم الفرع</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  </div>
+                                      <div class="row card-icon">
+                                          <div class="view-all col-md-6"><i class="fas fa-eye"></i> <span class="view-span">225</span></div>
+                                          <div class="card-adress col-md-6"><i class="fas fa-map-marker-alt"></i><span class="adress-span"> 46 شارع العزب فرج- حدائق حلوان</span> </div>
+                                          <div class="card-clicktocall col-md-12">
+                                          <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:01022630272" >Call :  01022630272</a>
+                                          </div>
+                                      </div>
+                                      <div class="card-button">
+                                          <a href="https://wa.me/201022630272" target="_blank" class="btn btn-success">واتساب</a>
+                                          <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
+                                      </div>
+                          </div>
+                      </div>
+                  </div>
+              {{-- End brunch --}}
+              </div>
             <div class="tab-pane" id="olx" role="tabpanel">
                 <p>
                   "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
@@ -292,6 +379,7 @@
   </div>
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link>
     <link>
 
   <!-- End moduls Tabs -->

@@ -12,10 +12,10 @@ class TestController extends Controller
     public function test()
     {
 
-       $u1 = User::find(1);
+       $u1 = User::find(4);
        $u2 = User::find(2);
 
-       return $u1->received_messages;
+       return $u1->company->pdfs;
 
     }
 

@@ -91,7 +91,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::post('/add', [App\Http\Controllers\CompanyController::class, 'add'])->name('add_post');
         Route::post('/rate', [App\Http\Controllers\CompanyController::class, 'rate'])->name('rate');
-        Route::get('/pdfs/{company_id}', [App\Http\Controllers\PdfController::class, 'pdfs'])->name('pdfs');
+
 
     });
 
@@ -101,6 +101,20 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/inbox', [App\Http\Controllers\MessageController::class, 'inbox'])->name('inbox');
         Route::get('/message_to_company/{receiver_id}/{sender_id}', [App\Http\Controllers\MessageController::class, 'message_to_company'])->name('message_to_company');
         Route::post('/post_message_to_company', [App\Http\Controllers\MessageController::class, 'post_message_to_company'])->name('post_message_to_company');
+
+    });
+
+    Route::group( ['prefix'=>'pdf', 'as'=>'pdf.'],function(){
+
+        Route::get('/{company_id}', [App\Http\Controllers\PdfController::class, 'index'])->name('index');
+        Route::post('/add', [App\Http\Controllers\PdfController::class, 'add'])->name('add');
+
+    });
+
+    Route::group( ['prefix'=>'image', 'as'=>'image.'],function(){
+
+        Route::get('/{company_id}', [App\Http\Controllers\ImageController::class, 'index'])->name('index');
+        Route::post('/add', [App\Http\Controllers\ImageController::class, 'add'])->name('add');
 
     });
 

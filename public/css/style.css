@@ -30,7 +30,7 @@ margin: auto;
     margin-right: 2rem;
 }
 .header{
-    background: url(../images/bg.jpg) no-repeat center center fixed;
+    background: url('../img/bg.jpg') no-repeat center center fixed;
     background-size: cover ;
     height: 570px;
 
@@ -1529,4 +1529,12 @@ margin: auto;
     width: 100%;
     cursor: pointer;
     opacity: 0
+}
+.image-gallery{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.but{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
