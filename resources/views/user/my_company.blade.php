@@ -23,7 +23,7 @@
             <a class="c-icon" href="#"><i class="fas fa-calendar-alt"></i><p> المناسبات </p></a>
         </div>
         <div class="col-md-2 text-center com-icon">
-            <a class="c-icon" href="#"><i class="fas fa-video"></i><p> الفيديوهات </p></a>
+            <a class="c-icon" href="{{route('video.index',auth()->user()->company->id)}}"><i class="fas fa-video"></i><p> الفيديوهات </p></a>
         </div>
         <div class="col-md-2 text-center com-icon">
             <a class="c-icon" href="{{route('image.index',auth()->user()->company->id)}}" ><i class="fas fa-images"></i><p> الصور </p></a>
@@ -38,7 +38,7 @@
             <a class="c-icon" href="{{route('pdf.index',auth()->user()->company->id)}}"><i class="fas fa-file-pdf"></i><p>  الملفات</p></a>
         </div>
         <div class="col-md-2 text-center com-icon">
-            <a class="c-icon" href="#"><i class="fas fa-code-branch"></i><p> الفروع </p></a>
+            <a class="c-icon" href="{{route('branch.index',auth()->user()->company->id)}}" ><i class="fas fa-code-branch"></i><p> الفروع </p></a>
         </div>
         <div class="col-md-2 text-center com-icon">
             <a class="c-icon" href="#"><i class="fab fa-buffer"></i><p>  العروض </p></a>

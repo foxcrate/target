@@ -30,7 +30,7 @@ margin: auto;
     margin-right: 2rem;
 }
 .header{
-    background: url('../img/bg.jpg') no-repeat center center fixed;
+    background: url('../images/bg.jpg') no-repeat center center fixed;
     background-size: cover ;
     height: 570px;
 

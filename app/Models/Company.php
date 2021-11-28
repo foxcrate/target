@@ -148,4 +148,8 @@ class Company extends Model
         return $this->hasMany( 'App\Models\Video');
     }
 
+    public function branches(){
+        return $this->hasMany( 'App\Models\Branch');
+    }
+
 }

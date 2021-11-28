@@ -196,59 +196,29 @@
           <div class="card-body">
             <!-- Tab panes -->
             <div class="tab-content text-center">
-              <div class="tab-pane active" id="photo" role="tabpanel">
-                  <!-- Start image Gallery -->
-                  <div class="container">
-                      <div class="portfolio-item row">
-                          <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
-                          <a href="https://image.freepik.com/free-photo/stylish-young-woman-with-bags-taking-selfie_23-2147962203.jpg" target="_blank" class="fancylight popup-btn" data-fancybox-group="light">
-                          <img class="img-fluid" src="https://image.freepik.com/free-photo/stylish-young-woman-with-bags-taking-selfie_23-2147962203.jpg" alt="">
-                          </a>
-                          </div>
-                          <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
-                          <a href="https://image.freepik.com/free-photo/pretty-girl-near-car_1157-16962.jpg" target="_blank" class="fancylight popup-btn" data-fancybox-group="light">
-                          <img class="img-fluid" src="https://image.freepik.com/free-photo/pretty-girl-near-car_1157-16962.jpg" alt="">
-                          </a>
-                          </div>
-                          <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
-                          <a href="https://image.freepik.com/free-photo/blonde-tourist-taking-selfie_23-2147978899.jpg" target="_blank" class="fancylight popup-btn" data-fancybox-group="light">
-                          <img class="img-fluid" src="https://image.freepik.com/free-photo/blonde-tourist-taking-selfie_23-2147978899.jpg" alt="">
-                          </a>
-                          </div>
-                          <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
-                          <a href="https://image.freepik.com/free-photo/cute-girls-oin-studio_1157-18211.jpg" target="_blank" class="fancylight popup-btn" data-fancybox-group="light">
-                          <img class="img-fluid" src="https://image.freepik.com/free-photo/cute-girls-oin-studio_1157-18211.jpg" alt="">
-                          </a>
-                          </div>
-                          <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
-                          <a href="https://image.freepik.com/free-photo/stylish-pin-up-girls_1157-18451.jpg" target="_blank" class="fancylight popup-btn" data-fancybox-group="light">
-                          <img class="img-fluid" src="https://image.freepik.com/free-photo/stylish-pin-up-girls_1157-18451.jpg" alt="">
-                          </a>
-                          </div>
-                          <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
-                          <a href="https://image.freepik.com/free-photo/stylish-pin-up-girl_1157-18940.jpg" target="_blank" class="fancylight popup-btn" data-fancybox-group="light">
-                          <img class="img-fluid" src="https://image.freepik.com/free-photo/stylish-pin-up-girl_1157-18940.jpg" alt="">
-                          </a>
-                          </div>
-                          <div class="item lap col-lg-3 col-md-4 col-6 col-sm">
-                          <a href="https://image.freepik.com/free-photo/digital-laptop-working-global-business-concept_53876-23438.jpg" target="_blank" class="fancylight popup-btn" data-fancybox-group="light">
-                          <img class="img-fluid" src="https://image.freepik.com/free-photo/digital-laptop-working-global-business-concept_53876-23438.jpg" alt="">
-                          </a>
-                          </div>
-                          <div class="item lap col-lg-3 col-md-4 col-6 col-sm">
-                          <a href="https://image.freepik.com/free-psd/set-digital-devices-screen-mockup_53876-76507.jpg" target="_blank" class="fancylight popup-btn" data-fancybox-group="light">
-                          <img class="img-fluid" src="https://image.freepik.com/free-psd/set-digital-devices-screen-mockup_53876-76507.jpg" alt="">
-                          </a>
-                          </div>
-                      </div>
-                  </div>
+                <div class="tab-pane active" id="photo" role="tabpanel">
+                    <!-- Start image Gallery -->
+                    <div class="container">
+                        <div class="portfolio-item row">
+                            @foreach( $company->images as $image )
+                            <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+                                <a href="{{ asset( $image->file ) }}" data-fancybox-group="light">
+                                    <img class="img-fluid" src="{{ asset( $image->file ) }}" alt="{{$image->title}}" title="{{$image->title}}">
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                   <!-- End image Gallery -->
-              </div>
-              <div class="tab-pane" id="video" role="tabpanel">
-              <div class="ratio ratio-16x9">
-                  <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
-              </div>
-              </div>
+                </div>
+
+            <div class="tab-pane" id="video" role="tabpanel">
+                @foreach( $company->videos as $video )
+                    <div class="ratio ratio-16x9">
+                        <iframe src={{$video->link}} title={{$video->title}} allowfullscreen></iframe>
+                    </div>
+                @endforeach
+            </div>
               <div class="tab-pane" id="job" role="tabpanel">
                 <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
               </div>
@@ -263,6 +233,7 @@
               <div class="tab-pane" id="event" role="tabpanel">
                 <p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>
               </div>
+
               <div class="tab-pane" id="files" role="tabpanel">
                   <div class="row">
                       @foreach( $company->pdfs as $pdf )
@@ -272,90 +243,33 @@
                       @endforeach
                   </div>
               </div>
+
               <div class="tab-pane" id="brun" role="tabpanel">
-                  {{-- Start Brun --}}
-                  <div class="row">
-                      <div class="col-md-3 company-ro">
-                          <div class="company-card" style="width: 18rem;">
-                                  <img src="img/company.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                      <h5 class="view-span">إسم الفرع</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  </div>
-                                      <div class="row card-icon">
-                                          <div class="view-all col-md-6"><i class="fas fa-eye"></i> <span class="view-span">225</span></div>
-                                          <div class="card-adress col-md-6"><i class="fas fa-map-marker-alt"></i><span class="adress-span"> 46 شارع العزب فرج- حدائق حلوان</span> </div>
-                                          <div class="card-clicktocall col-md-12">
-                                          <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:01022630272" >Call :  01022630272</a>
-                                          </div>
-                                      </div>
-                                      <div class="card-button">
-                                          <a href="https://wa.me/201022630272" target="_blank" class="btn btn-success">واتساب</a>
-                                          <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
-                                      </div>
-                          </div>
-                      </div>
-                      <div class="col-md-3 company-ro">
-                          <div class="company-card" style="width: 18rem;">
-                                  <img src="img/company.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                      <h5 class="view-span">إسم الفرع</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  </div>
-                                      <div class="row card-icon">
-                                          <div class="view-all col-md-6"><i class="fas fa-eye"></i> <span class="view-span">225</span></div>
-                                          <div class="card-adress col-md-6"><i class="fas fa-map-marker-alt"></i><span class="adress-span"> 46 شارع العزب فرج- حدائق حلوان</span> </div>
-                                          <div class="card-clicktocall col-md-12">
-                                          <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:01022630272" >Call :  01022630272</a>
-                                          </div>
-                                      </div>
-                                      <div class="card-button">
-                                          <a href="https://wa.me/201022630272" target="_blank" class="btn btn-success">واتساب</a>
-                                          <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
-                                      </div>
-                          </div>
-                      </div>
-                      <div class="col-md-3 company-ro">
-                          <div class="company-card" style="width: 18rem;">
-                                  <img src="img/company.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                      <h5 class="view-span">إسم الفرع</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  </div>
-                                      <div class="row card-icon">
-                                          <div class="view-all col-md-6"><i class="fas fa-eye"></i> <span class="view-span">225</span></div>
-                                          <div class="card-adress col-md-6"><i class="fas fa-map-marker-alt"></i><span class="adress-span"> 46 شارع العزب فرج- حدائق حلوان</span> </div>
-                                          <div class="card-clicktocall col-md-12">
-                                          <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:01022630272" >Call :  01022630272</a>
-                                          </div>
-                                      </div>
-                                      <div class="card-button">
-                                          <a href="https://wa.me/201022630272" target="_blank" class="btn btn-success">واتساب</a>
-                                          <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
-                                      </div>
-                          </div>
-                      </div>
-                      <div class="col-md-3 company-ro">
-                          <div class="company-card" style="width: 18rem;">
-                                  <img src="img/company.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                      <h5 class="view-span">إسم الفرع</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  </div>
-                                      <div class="row card-icon">
-                                          <div class="view-all col-md-6"><i class="fas fa-eye"></i> <span class="view-span">225</span></div>
-                                          <div class="card-adress col-md-6"><i class="fas fa-map-marker-alt"></i><span class="adress-span"> 46 شارع العزب فرج- حدائق حلوان</span> </div>
-                                          <div class="card-clicktocall col-md-12">
-                                          <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:01022630272" >Call :  01022630272</a>
-                                          </div>
-                                      </div>
-                                      <div class="card-button">
-                                          <a href="https://wa.me/201022630272" target="_blank" class="btn btn-success">واتساب</a>
-                                          <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
-                                      </div>
-                          </div>
-                      </div>
-                  </div>
+                    {{-- Start Brun --}}
+                    <div class="row">
+                        @foreach( $company->branches as $branch )
+                        <div class="col-md-3 company-ro">
+                            <div class="company-card" style="width: 18rem;">
+                                    <img src="{{asset( $branch->image )}}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="view-span">{{$branch->title}}</h5>
+                                        {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+                                    </div>
+                                        <div class="row card-icon">
+                                            <div class="view-all col-md-6"><i class="fas fa-eye"></i> <span class="view-span">225</span></div>
+                                            <div class="card-adress col-md-6"><i class="fas fa-map-marker-alt"></i><span class="adress-span"> {{$branch->address}}</span> </div>
+                                            <div class="card-clicktocall col-md-12">
+                                            <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:{{$branch->mobile_number}}" >Call :  {{$branch->mobile_number}}</a>
+                                            </div>
+                                        </div>
+                                        <div class="card-button">
+                                            <a href="https://wa.me/{{$branch->whats_number}}" target="_blank" class="btn btn-success">واتساب</a>
+                                            <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
+                                        </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
               {{-- End brunch --}}
               </div>
             <div class="tab-pane" id="olx" role="tabpanel">

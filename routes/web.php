@@ -118,6 +118,20 @@ Route::group(['middleware' => 'auth'], function () {
 
     });
 
+    Route::group( ['prefix'=>'video', 'as'=>'video.'],function(){
+
+        Route::get('/{company_id}', [App\Http\Controllers\VideoController::class, 'index'])->name('index');
+        Route::post('/add', [App\Http\Controllers\VideoController::class, 'add'])->name('add');
+
+    });
+
+    Route::group( ['prefix'=>'branch', 'as'=>'branch.'],function(){
+
+        Route::get('/{company_id}', [App\Http\Controllers\BranchController::class, 'index'])->name('index');
+        Route::post('/add', [App\Http\Controllers\BranchController::class, 'add'])->name('add');
+
+    });
+
 });
 
 // Route::group( ['prefix'=>'user', 'as'=>'user.'],function(){
