@@ -17,7 +17,7 @@
             <a class="c-icon" href="#"><i class="fas fa-store"></i><p>المتجر</p></a>
         </div>
         <div class="col-md-2 text-center com-icon">
-            <a class="c-icon" href="#"><i class="fab fa-buysellads"></i><p>  الأعلانات</p></a>
+            <a class="c-icon" href="{{route('ad.index',auth()->user()->id)}}"><i class="fab fa-buysellads"></i><p>  الأعلانات</p></a>
         </div>
         <div class="col-md-2 text-center com-icon">
             <a class="c-icon" href="#"><i class="fas fa-calendar-alt"></i><p> المناسبات </p></a>

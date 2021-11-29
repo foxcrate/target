@@ -19,4 +19,8 @@ class Category extends Model
         return $this->hasMany('App\Models\Company');
     }
 
+    public function ads(){
+        return $this->belongsToMany(Ad::class,'ad_categories');
+    }
+
 }

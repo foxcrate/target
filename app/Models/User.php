@@ -53,6 +53,10 @@ class User extends Authenticatable
         return $this->hasOne(Package::class);
     }
 
+    public function ads(){
+        return $this->hasMany( 'App\Models\Ad');
+    }
+
     public function sent_messages(){
         return $this->hasMany( 'App\Models\Message', 'sender_user_id');
     }

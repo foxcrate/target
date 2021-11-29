@@ -18,7 +18,7 @@ class BranchController extends Controller
     }
 
     public function add(Request $request){
-        return $request;
+        //return $request;
         if ($request->hasFile('image')) {
 
             $extension = $request->file('image')->extension();

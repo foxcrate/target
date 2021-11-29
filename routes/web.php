@@ -132,6 +132,15 @@ Route::group(['middleware' => 'auth'], function () {
 
     });
 
+    Route::group( ['prefix'=>'ad', 'as'=>'ad.'],function(){
+
+        Route::get('/add_get', [App\Http\Controllers\AdController::class, 'add_get'])->name('add_get');
+        Route::get('/{user_id}', [App\Http\Controllers\AdController::class, 'index'])->name('index');
+        Route::post('/add_post', [App\Http\Controllers\AdController::class, 'add_post'])->name('add_post');
+        Route::get('/delete/{ad_id}', [App\Http\Controllers\AdController::class, 'delete'])->name('delete');
+
+    });
+
 });
 
 // Route::group( ['prefix'=>'user', 'as'=>'user.'],function(){
