@@ -20,12 +20,12 @@
 
           <div class="details">
             <div class="header-1">
-              <img class="avatar" src="img/company.jpg">
+              <img class="avatar" src="/images/company.jpg">
               <div class="from">
                 @if(! $past_messages[0]->sender_user->company)
                 <span>{{$past_messages[0]->sender_user->name}} </span>
                 @else
-                <span>{{$past_messages[0]->sender_user->company}} </span>
+                <span>{{$past_messages[0]->sender_user->company->title}} </span>
                 @endif
               </div>
               <div class="date"> {{$past_messages[0]->created_at}} </div>

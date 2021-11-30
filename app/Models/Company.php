@@ -152,4 +152,12 @@ class Company extends Model
         return $this->hasMany( 'App\Models\Branch');
     }
 
+    public function blogs(){
+        return $this->hasMany( 'App\Models\Blog');
+    }
+
+    public function prducts(){
+        return $this->hasMany( 'App\Models\Product');
+    }
+
 }

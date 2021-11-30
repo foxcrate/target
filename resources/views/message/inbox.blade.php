@@ -14,13 +14,13 @@
                         <div>
                             <div class="row p-4 no-gutters align-items-center">
                                 <div class="col-sm-12 col-md-6">
-                                    <h3 class="font-light mb-0"><i class="fas fa-mail-bulk"></i> {{count($inbox_messages)}}  رسالة غير مقروءه</h3>
+                                    <h3 class="font-light mb-0"><i class="fas fa-mail-bulk"></i> {{count($inbox_messages)}} رسالة</h3>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <ul class="list-inline dl mb-0 float-left float-md-right">
                                         <li class="list-inline-item text-danger">
                                             <a href="#">
-                                                <button class="btn btn-circle btn-danger text-white" href="javascript:void(0)">
+                                                <button class="btn btn-circle btn-danger text-white" onclick="submit_form()">
                                                     <i class="fa fa-trash"></i> حذف
                                                 </button>
                                             </a>
@@ -38,19 +38,19 @@
                                             <!-- label -->
                                             <td class="pl-3">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="cst1" />
-                                                    <label class="custom-control-label" for="cst1">&nbsp;</label>
+                                                    <input type="checkbox" class="custom-control-input delete_checkbox" value="{{$message->id}}" id="{{$message->id}}" />
+                                                    <label class="custom-control-label" for="{{$message->id}}">&nbsp;</label>
                                                 </div>
                                             </td>
                                             <!-- star -->
                                             <td><i class="fa fa-star text-warning"></i></td>
                                             <td>
-                                                <span class="mb-0 text-muted">{{$message->sender_user->name}}</span>
+                                                <a href="{{route('message.past_messages',[ 'sender_id'=> $message->sender_user->id , 'receiver_id'=> $message->receiver_user->id ])}}" class="text-dark">{{$message->sender_user->name}}</a>
                                             </td>
                                             <!-- Message -->
                                             <td>
                                                 <a class="link" href="javascript: void(0)">
-                                                    <span class="badge badge-pill text-white font-medium badge-danger mr-2">Work</span>
+                                                    {{-- <span class="badge badge-pill text-white font-medium badge-danger mr-2">Work</span> --}}
                                                     <a href="{{route('message.past_messages',[ 'sender_id'=> $message->sender_user->id , 'receiver_id'=> $message->receiver_user->id ])}}" class="text-dark">{{$message->title}}</a>
                                                 </a>
                                             </td>
@@ -70,5 +70,44 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    function submit_form(){
+        //alert("Alo");
+        var checkedInputs = document.querySelectorAll(" input[type='checkbox']:checked , [class='delete_checkbox'] ");
+        ids_array=[];
+        checkedInputs.forEach(element => {
+            ids_array.push(element.value);
+        });
+
+        //console.log(ids_array);
+        //console.log(checkedInputs[0].value);
+        //document.getElementById("delete_form").submit();
+
+        if( ids_array.length >0 ){
+            var formData = {
+                ids:ids_array,
+            };
+            //alert(formData);
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                url: "{{ route('message.delete') }}" ,
+                data: formData,
+                dataType: "json",
+                encode: true,
+                }).done(function (data) {
+                console.log("From Server: ",data);
+            });
+        }else{
+            alert("Please Select A Message To Delete");
+        }
+
+    }
+
+</script>
 
 @endsection

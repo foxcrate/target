@@ -19,6 +19,18 @@ class MessageController extends Controller
 
     }
 
+    public function delete(Request $request){
+        //return $request->ids;
+
+        foreach( $request->ids as $id ){
+            $the_message = Message::find($id);
+            $the_message->delete();
+        }
+
+        return "Done";
+
+    }
+
     public function post_message_to_company(Request $request){
 
         //return $request;
@@ -57,7 +69,7 @@ class MessageController extends Controller
     public function past_messages($sender_id , $receiver_id){
         //$x=[$sender_id,$receiver_id];
         //return $x ;
-        $past_messages = Message::where('sender_user_id',$sender_id)->where('receiver_user_id',$receiver_id)->get();
+        $past_messages = Message::where('sender_user_id',$sender_id)->where('receiver_user_id',$receiver_id)->orderBy('id', 'desc')->get();
         return view('message.past_messages')->with('past_messages',$past_messages) ;
         $the_user = User::find(auth()->user()->id);
         // $the_user_conversation =

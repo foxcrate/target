@@ -31,6 +31,9 @@
     {{-- <meta name="description" content="{{$meta_description}}"> --}}
     {{-- <meta name="keywords" content="{{$meta_tag}}"> --}}
     <meta name="author" content="دليل تارجت للشركات والمصانع">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
     {{-- <title>{{$page_title}}</title> --}}
         <!-- Start CSS -->
@@ -44,6 +47,7 @@
     <script src="{{ asset('js/bootstrap.bundle.js') }}" ></script>
     <script src="{{ asset('js/popper.js') }}" ></script>
     <script src="{{ asset('js/jQuery.js') }}" ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
     <script src="{{ asset('js/multiple-select.min.js') }}" ></script>
     <script src="{{ asset('js/all.min.js') }}" ></script>

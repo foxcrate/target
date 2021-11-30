@@ -17,7 +17,7 @@ class PdfController extends Controller
     }
 
     public function add(Request $request){
-
+        return $request;
         if ($request->hasFile('file')) {
 
             $extension = $request->file('file')->extension();
@@ -39,6 +39,14 @@ class PdfController extends Controller
 
         return redirect()->back()->with('msg','File Uploaded Successfully');
 
+    }
+
+    public function delete($pdf_id){
+
+        $the_pdf = Pdf::find($pdf_id);
+
+        $the_pdf->delete();
+        return redirect()->back();
     }
 
 }

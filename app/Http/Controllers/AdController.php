@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Ad;
 use App\Models\Setting;
+use Carbon\Carbon;
 
 class AdController extends Controller
 {
@@ -62,6 +63,18 @@ class AdController extends Controller
         $the_ad->save();
 
         return redirect()->back()->with('message','Done Successfully');
+
+    }
+
+    public function recharge($ad_id){
+
+        $the_ad = Ad::find($ad_id);
+
+        $previous_end_date = new Carbon($the_ad->end_date);
+        $new_end_date = $previous_end_date->addMonth();
+        $the_ad->end_date = $new_end_date;
+        $the_ad->save();
+        return redirect()->back()->with('message','تم تجديد الإشتراك بنجاح');
 
     }
 

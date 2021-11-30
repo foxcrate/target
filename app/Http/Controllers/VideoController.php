@@ -18,14 +18,26 @@ class VideoController extends Controller
 
     public function add(Request $request){
 
+        $url = $request->link;
+        parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+        //return $my_array_of_vars['v'];
+
         $the_video = Video::create([
             'title'=> $request->name,
-            'link'=> $request->link,
+            'link'=>'https://www.youtube.com/embed/' . $my_array_of_vars['v'],
             'company_id'=> $request->company_id,
         ]);
 
         return redirect()->back()->with('message','File Uploaded Successfully');
 
+    }
+
+    public function delete($video_id){
+
+        $the_video = Video::find($video_id);
+
+        $the_video->delete();
+        return redirect()->back();
     }
 
 }

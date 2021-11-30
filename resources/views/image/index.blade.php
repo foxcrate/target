@@ -36,6 +36,7 @@
                                 <a href="http://localhost:8000/{{$image->file}}" target="_blank" class="fancylight popup-btn" data-fancybox-group="light">
                                 <img class="img-fluid" src="{{asset($image->file)}}" title="{{$image->title}}">
                                 </a>
+                                <a href="{{ route( 'image.delete' , ['image_id'=>$image->id] ) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         @endforeach
                     </div>

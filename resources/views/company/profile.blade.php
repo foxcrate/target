@@ -223,12 +223,160 @@
                 <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
               </div>
               <div class="tab-pane" id="product" role="tabpanel">
-                <p>
-                  "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-                </p>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 company-ro">
+                            <div class="company-card" style="width: 18rem;">
+                                    <img src="/images/company.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="view-span">إسم ألمنتج</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                        <div class="row card-icon-pro">
+                                            <div class="view-all-pro col-md-12"><i class="fas fa-money-bill-alt"></i> سعر المنتج <span class="view-span">225</span></div>
+                                            {{-- <div class="view-all-pro col-md-12"><i class="fas fa-tags"></i> كود الخصمم <span class="view-span btn btn-warning d-grid gap-2 text-white">Arx26@asr</span></div> --}}
+                                            <div class="card-clicktocall col-md-12">
+                                                <a class="card-phone btn btn-outline-primary d-grid gap-2" href="tel:01022630272" >Call :  01022630272</a>
+                                            </div>
+                                            <div class="card-clicktocall col-md-12">
+                                            <!-- <a class="card-phone btn btn-outline-danger d-grid gap-2" href="#" data-bs-toggle="modal" data-bs-target="#proffer"> الحصول على عرض سعر</a> -->
+
+                                            <!-- {{-- Start Modal --}} -->
+                                        <div class="modal fade" id="proffer" tabindex="-1" aria-labelledby="profferlabel" aria-hidden="true">
+                                            <div class="modal-dialog ">
+                                                <div class="modal-content">
+                                                <div class="modal-header text-center">
+                                                    <p class="modal-title" id="profferlabel"> رجاء ملئ البيانات للحصول على عرض سعر</p>                                                    </div>
+                                                <div class="modal-body">
+                                                <div class="col-md-12 pro-offer">
+                                                    <input type="text" class="form-control" placeholder="الأسم بالكامل" aria-label="Username" aria-describedby="basic-addon1">                                         </div>
+                                                <div class="col-md-12 pro-offer">
+                                                    <input type="number" class="form-control" placeholder="رقم الهاتف" aria-label="Username" aria-describedby="basic-addon1">                                        </div>
+                                                <div class="col-md-12 pro-offer">
+                                                    <textarea class="form-control" placeholder="أكتب تعليقك" aria-label="With textarea"></textarea>
+                                                </div>
+                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">إرسال</button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                            <!-- {{-- End Modal --}} -->
+
+                                        </div>
+                                        <div class="card-button-pro">
+                                            <a href="https://wa.me/201022630272" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp"></i> التحدث مع التاجر</a>
+                                            <a class="btn btn-warning" href="newmsg" target="_blank"><i class="fas fa-reply"></i> إرسال رسالة</a>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
               </div>
               <div class="tab-pane" id="blog" role="tabpanel">
-                <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
+
+                <section class="dark">
+                    <div class="container py-4">
+                        <article class="postcard dark blue">
+                            <a class="postcard__img_link" href="#">
+                                {{-- public\images\company.jpg --}}
+                                <img class="postcard__img" src="/images/company.jpg" alt="Image Title" />
+                            </a>
+                            <div class="postcard__text">
+                                <h1 class="postcard__title blue"><a href="#">عنوان المقالة</a></h1>
+                                <div class="postcard__subtitle small">
+                                    <time datetime="2020-05-25 12:00:00">
+                                        <i class="fas fa-calendar-alt mr-2"></i> الأثنين 11-10-2019
+                                    </time>
+                                </div>
+                                <div class="postcard__bar"></div>
+                                <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                                <ul class="postcard__tagbox">
+                                    <li class="tag__item play red">
+                                        <a  href="#" data-bs-toggle="modal" data-bs-target="#blogview"><i class="fas fa-play mr-2"></i> مشاهدة المقالة</a>
+                                            {{-- Start Modal --}}
+                                        <div class="modal fade" id="blogview" tabindex="-1" aria-labelledby="blogviewlabel" aria-hidden="true">
+                                            <div class="modal-dialog ">
+                                                <div class="modal-content">
+                                                <div class="modal-header text-center">
+                                                    <p class="modal-title" id="blogviewlabel">عنوان المقالة</p>                                                    </div>
+                                                <div class="modal-body">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!
+                                                    Image Title
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        {{-- End Modal --}}
+                                    </li>
+                                    <li class="tag__item play blue">
+                                        <a href="https://www.facebook.com/sharer.php?u={{url()->current()}}" target="_blank"><i class="fab fa-facebook-square"></i> مشاركة  </a>
+                                    </li>
+                                    <li class="tag__item play blue">
+                                        <a href="https://twitter.com/share?url={{url()->current()}}" target="_blank"><i class="fab fa-twitter-square"></i> مشاركة</a>
+                                    </li>
+                                    <li class="tag__item play green">
+                                        <a href="https://api.whatsapp.com/send?text={{url()->current()}}" target="_blank"><i class="fab fa-whatsapp"></i> مشاركة </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                        {{-- <article class="postcard dark blue">
+                            <a class="postcard__img_link" href="#">
+                                <img class="postcard__img" src="/images/company.jpg" alt="Image Title" />
+                            </a>
+                            <div class="postcard__text">
+                                <h1 class="postcard__title blue"><a href="#">عنوان المقالة</a></h1>
+                                <div class="postcard__subtitle small">
+                                    <time datetime="2020-05-25 12:00:00">
+                                        <i class="fas fa-calendar-alt mr-2"></i> الأثنين 11-10-2019
+                                    </time>
+                                </div>
+                                <div class="postcard__bar"></div>
+                                <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                                <ul class="postcard__tagbox">
+                                    <li class="tag__item play red">
+                                        <a  href="#" data-bs-toggle="modal" data-bs-target="#blogview1"><i class="fas fa-play mr-2"></i> مشاهدة المقالة</a>
+                                            //
+                                        <div class="modal fade" id="blogview1" tabindex="-1" aria-labelledby="blogviewlabel" aria-hidden="true">
+                                            <div class="modal-dialog ">
+                                                <div class="modal-content">
+                                                <div class="modal-header text-center">
+                                                    <p class="modal-title" id="blogviewlabel">عنوان المقالة</p>                                                    </div>
+                                                <div class="modal-body">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!
+                                                    Image Title
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        //
+                                    </li>
+                                    <li class="tag__item play blue">
+                                        <a href="https://www.facebook.com/sharer.php?u=https://www.targetbusiness.solutions/" target="_blank"><i class="fab fa-facebook-square"></i> مشاركة  </a>
+                                    </li>
+                                    <li class="tag__item play blue">
+                                        <a href="https://twitter.com/share?url=https://www.targetbusiness.solutions/" target="_blank"><i class="fab fa-twitter-square"></i> مشاركة</a>
+                                    </li>
+                                    <li class="tag__item play green">
+                                        <a href="https://api.whatsapp.com/send?text=https://www.targetbusiness.solutions/" target="_blank"><i class="fab fa-whatsapp"></i> مشاركة </a>
+                                    </li>                                </ul>
+                            </div>
+                        </article> --}}
+                    </div>
+                </section>
+
               </div>
               <div class="tab-pane" id="event" role="tabpanel">
                 <p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>

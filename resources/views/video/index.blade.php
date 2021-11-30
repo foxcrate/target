@@ -31,7 +31,9 @@
                 <div class="col-md-12">
                     <div class="ratio ratio-16x9">
                         <iframe src={{$video->link}} title={{$video->title}} allowfullscreen></iframe>
+
                     </div>
+                    <a href="{{ route( 'video.delete' , ['video_id'=>$video->id] ) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                 </div>
             @endforeach
         </div>

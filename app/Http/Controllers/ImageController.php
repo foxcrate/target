@@ -41,4 +41,12 @@ class ImageController extends Controller
 
     }
 
+    public function delete($image_id){
+
+        $the_image = Image::find($image_id);
+
+        $the_image->delete();
+        return redirect()->back();
+    }
+
 }

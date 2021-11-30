@@ -5,8 +5,12 @@
 
 @include('templates.dash_navbar')
 
-
-
+{{-- <input type="hidden" name="student_id" value="{{$student_id}}"> --}}
+@if(Session::has('message'))
+    <div class="alert alert-success m-3" role="alert">
+        {{ Session::get('message') }}
+    </div>
+@endif
 <div class="container">
     <div class="col-md-12">
             <h2 class="block-title">جميع إعلاناتي</h2>
@@ -40,9 +44,9 @@
                                 <td>{{$ad->seen}}</td>
                                 <td>{{$ad->categories_names()}}</td>
                                 <td>
-                                    <a class="btn btn-dark ads-button" href="#">تعديل</a>
+                                    {{-- <a class="btn btn-dark ads-button" href="#">تعديل</a> --}}
                                     <a class="btn btn-danger ads-button" href="{{ route('ad.delete',['ad_id'=> $ad->id ]) }}">إيقاف</a>
-                                    <a class="btn btn-primary ads-button" href="#">تجديد</a>
+                                    <a class="btn btn-primary ads-button" href="{{ route('ad.recharge',['ad_id'=> $ad->id ]) }}">تجديد</a>
                                 </td>
                             </tr>
                         @endforeach

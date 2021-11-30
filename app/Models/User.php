@@ -58,11 +58,11 @@ class User extends Authenticatable
     }
 
     public function sent_messages(){
-        return $this->hasMany( 'App\Models\Message', 'sender_user_id');
+        return $this->hasMany( 'App\Models\Message', 'sender_user_id')->orderBy('id', 'desc');
     }
 
     public function received_messages(){
-        return $this->hasMany( 'App\Models\Message', 'receiver_user_id');
+        return $this->hasMany( 'App\Models\Message', 'receiver_user_id')->orderBy('id', 'desc');
     }
 
     public function all_messages(){

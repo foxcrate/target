@@ -60,6 +60,9 @@
                                         <a href="#" class="btn btn-danger">إرسال بريد الكتروني</a>
                                     </div>
                         </div>
+                        <a href="{{ route( 'branch.delete' , ['branch_id'=>$branch->id] ) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                        <a href="{{ route( 'branch.edit' , ['branch_id'=>$branch->id] ) }}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+
                     </div>
                @endforeach
             </div>

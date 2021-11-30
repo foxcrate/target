@@ -25,7 +25,9 @@
             @foreach( $all_pdfs as $pdf )
             <div class="col-md-2 text-center com-icon">
                 <a class="c-icon" href="http://localhost:8000/{{$pdf->file}}" target="_blank" ><i class="fas fa-file-pdf"></i><p> {{$pdf->title}}</p></a>
+                <a href="{{ route( 'pdf.delete' , ['pdf_id'=>$pdf->id] ) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
             </div>
+
             @endforeach
         </div>
     </div>

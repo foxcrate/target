@@ -101,6 +101,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/inbox', [App\Http\Controllers\MessageController::class, 'inbox'])->name('inbox');
         Route::get('/message_to_company/{receiver_id}/{sender_id}', [App\Http\Controllers\MessageController::class, 'message_to_company'])->name('message_to_company');
         Route::post('/post_message_to_company', [App\Http\Controllers\MessageController::class, 'post_message_to_company'])->name('post_message_to_company');
+        Route::post('/delete', [App\Http\Controllers\MessageController::class, 'delete'])->name('delete');
 
     });
 
@@ -108,6 +109,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/{company_id}', [App\Http\Controllers\PdfController::class, 'index'])->name('index');
         Route::post('/add', [App\Http\Controllers\PdfController::class, 'add'])->name('add');
+        Route::get('delete/{pdf_id}', [App\Http\Controllers\PdfController::class, 'delete'])->name('delete');
 
     });
 
@@ -115,6 +117,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/{company_id}', [App\Http\Controllers\ImageController::class, 'index'])->name('index');
         Route::post('/add', [App\Http\Controllers\ImageController::class, 'add'])->name('add');
+        Route::get('/delete/{image_id}', [App\Http\Controllers\ImageController::class, 'delete'])->name('delete');
 
     });
 
@@ -122,6 +125,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/{company_id}', [App\Http\Controllers\VideoController::class, 'index'])->name('index');
         Route::post('/add', [App\Http\Controllers\VideoController::class, 'add'])->name('add');
+        Route::get('/delete/{video_id}', [App\Http\Controllers\VideoController::class, 'delete'])->name('delete');
 
     });
 
@@ -129,6 +133,23 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/{company_id}', [App\Http\Controllers\BranchController::class, 'index'])->name('index');
         Route::post('/add', [App\Http\Controllers\BranchController::class, 'add'])->name('add');
+        Route::get('/delete/{branch_id}', [App\Http\Controllers\BranchController::class, 'delete'])->name('delete');
+        Route::get('/edit/{branch_id}', [App\Http\Controllers\BranchController::class, 'edit'])->name('edit');
+        Route::post('/edit_post', [App\Http\Controllers\BranchController::class, 'edit_post'])->name('edit_post');
+
+    });
+
+    Route::group( ['prefix'=>'blog', 'as'=>'blog.'],function(){
+
+        Route::get('/{company_id}', [App\Http\Controllers\BlogController::class, 'index'])->name('index');
+        Route::post('/add', [App\Http\Controllers\BlogController::class, 'add'])->name('add');
+
+    });
+
+    Route::group( ['prefix'=>'product', 'as'=>'product.'],function(){
+
+        Route::get('/{company_id}', [App\Http\Controllers\ProductController::class, 'index'])->name('index');
+        Route::post('/add', [App\Http\Controllers\ProductController::class, 'add'])->name('add');
 
     });
 
@@ -138,6 +159,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/{user_id}', [App\Http\Controllers\AdController::class, 'index'])->name('index');
         Route::post('/add_post', [App\Http\Controllers\AdController::class, 'add_post'])->name('add_post');
         Route::get('/delete/{ad_id}', [App\Http\Controllers\AdController::class, 'delete'])->name('delete');
+        Route::get('recharge/{ad_id}', [App\Http\Controllers\AdController::class, 'recharge'])->name('recharge');
 
     });
 
